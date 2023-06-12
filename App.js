@@ -12,6 +12,14 @@ import Ragistation from "./screens/Ragistation";
 import FamousAnchors from "./screens/FamousAnchors";
 import SendRanking from "./screens/SendRanking";
 import ReceivedRanking from "./screens/ReceivedRanking";
+import PopularAnchors from "./screens/PopularAnchors";
+import PopularMultiAnchors from "./screens/PopularMultiAnchors";
+import VoiceChatRoom from "./screens/VoiceChatRoom";
+import RankingReceived from "./screens/RankingReceived";
+import SendRceived from "./screens/SendReceived";
+import Footprint from "./screens/Footprint";
+import Friends from "./screens/Friends";
+import Visitors from "./screens/Visitors";
 
 const Stack = createStackNavigator();
 
@@ -37,6 +45,17 @@ export default function App() {
           <Stack.Screen name='famousAnchors' component={FamousAnchors} />
           <Stack.Screen name='sendRanking' component={SendRanking} />
           <Stack.Screen name='receivedRanking' component={ReceivedRanking} />
+          <Stack.Screen name='popularAnchors' component={PopularAnchors} />
+          <Stack.Screen
+            name='popularMultiAnchors'
+            component={PopularMultiAnchors}
+          />
+          <Stack.Screen name='voiceCahtRoom' component={VoiceChatRoom} />
+          <Stack.Screen name='rankingReceived' component={RankingReceived} />
+          <Stack.Screen name='sendReceived' component={SendRceived} />
+          <Stack.Screen name='footPrint' component={Footprint} />
+          <Stack.Screen name='friends' component={Friends} />
+          <Stack.Screen name='visitors' component={Visitors} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

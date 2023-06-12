@@ -1,6 +1,8 @@
 import React from "react";
 import { View, TextInput, Image } from "react-native";
 import { common } from "../css/common";
+import { Ionicons } from "@expo/vector-icons";
+import { colors } from "../variants/colors";
 
 const InputFeild = ({
   placeholder,
@@ -23,15 +25,14 @@ const InputFeild = ({
       )}
       <TextInput placeholder={placeholder} keyboardType={keyboardType} />
       {secondIcon && (
-        <Image
+        <Ionicons
           style={{
-            height: 16,
-            width: 16,
             marginTop: 3,
-            marginLeft: 15,
+            marginLeft: 20,
           }}
-          resizeMode='contain'
-          source={secondIcon}
+          name='md-eye'
+          size={16}
+          color={colors.primary}
         />
       )}
     </View>

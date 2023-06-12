@@ -1,0 +1,83 @@
+import { StyleSheet } from "react-native";
+import { colors } from "../variants/colors";
+
+export const style = StyleSheet.create({
+  topWrapper: {
+    flexDirection: "row",
+    justifyContent: "center",
+    paddingHorizontal: 5,
+    paddingVertical: 5,
+    backgroundColor: colors.white,
+    columnGap: 9,
+  },
+  topItemWraper: {
+    flexDirection: "row",
+    alignItems: "flex-end",
+    backgroundColor: "#4E90FF",
+    marginTop: 5,
+    paddingHorizontal: 20,
+    paddingVertical: 6,
+    borderBottomLeftRadius: 30,
+    borderTopRightRadius: 30,
+    columnGap: 2,
+  },
+  starWrapper: {
+    paddingHorizontal: 5,
+    paddingTop: 5,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    columnGap: 5,
+    backgroundColor: colors.white,
+    flexWrap: "wrap",
+    rowGap: 5,
+    paddingBottom: 5,
+  },
+  starItem: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    justifyContent: "space-between",
+    height: "100%",
+    paddingVertical: 7,
+    paddingHorizontal: 2,
+  },
+  starImg: { width: "100%", height: 180, borderRadius: 20 },
+  starDtop: {
+    flexDirection: "row",
+    alignItems: "center",
+    columnGap: 3,
+    paddingHorizontal: 10,
+    paddingVertical: 2,
+    borderRadius: 30,
+  },
+  starDtopR: {
+    flexDirection: "row",
+    alignItems: "center",
+    columnGap: 4,
+  },
+  vsfristImg: {
+    width: "50%",
+    height: 180,
+    borderTopLeftRadius: 20,
+    borderBottomLeftRadius: 20,
+  },
+  vsSecondImg: {
+    width: "50%",
+    height: 180,
+    borderTopRightRadius: 20,
+    borderBottomRightRadius: 20,
+  },
+  vstitle: {
+    position: "absolute",
+    left: 75,
+    top: 70,
+  },
+  friend: {
+    width: 22,
+    height: 22,
+    borderColor: colors.white,
+    borderWidth: 2,
+    borderRadius: 20,
+  },
+});

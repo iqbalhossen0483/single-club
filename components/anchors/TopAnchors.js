@@ -5,6 +5,7 @@ import { Text } from "react-native";
 import { Image } from "react-native";
 import { View } from "react-native";
 import { colors } from "../../variants/colors";
+import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
 
 const TopAnchors = ({ radio = true, color = colors.orange, dimond }) => {
   return (
@@ -91,9 +92,13 @@ function TopAnchor(props) {
         {radio && (
           <Pressable onPress={() => setSelected((prev) => !prev)}>
             {selected ? (
-              <Image source={require("../../public/icons/radio.png")} />
+              <AntDesign name='checkcircle' size={20} color={colors.primary} />
             ) : (
-              <Image source={require("../../public/icons/Ellipse.png")} />
+              <MaterialCommunityIcons
+                name='radiobox-blank'
+                size={20}
+                color={colors.primary}
+              />
             )}
           </Pressable>
         )}

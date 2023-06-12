@@ -181,7 +181,13 @@ const Profile = ({ navigation }) => {
         hasBackdrop
         animationIn='slideInRight'
         animationOut='slideOutRight'
-        style={common.modal}
+        onBackdropPress={() => setShowCategory(false)}
+        style={{
+          ...common.modal,
+          top: 35,
+          borderTopLeftRadius: 16,
+          borderTopRightRadius: 16,
+        }}
       >
         <View style={{ flex: 1 }}>
           <Category

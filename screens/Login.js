@@ -6,6 +6,7 @@ import OrSeparator from "../utilitize/OrSeparator";
 import { colors } from "../variants/colors";
 import { useState } from "react";
 import { Pressable } from "react-native";
+import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
 
 const Login = ({ navigation }) => {
   const [agreeTerms, setAgreeTerms] = useState(false);
@@ -84,14 +85,12 @@ const Login = ({ navigation }) => {
           }}
         >
           {agreeTerms ? (
-            <Image
-              style={{ width: 15, height: 15 }}
-              source={require("../public/icons/radio.png")}
-            />
+            <AntDesign name='checkcircle' size={20} color={colors.primary} />
           ) : (
-            <Image
-              style={{ width: 15, height: 15 }}
-              source={require("../public/icons/plan-radio.png")}
+            <MaterialCommunityIcons
+              name='radiobox-blank'
+              size={20}
+              color={colors.secondary}
             />
           )}
           <Pressable onPress={() => setAgreeTerms((prev) => !prev)}>

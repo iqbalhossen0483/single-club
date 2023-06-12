@@ -4,17 +4,20 @@ import { colors } from "../variants/colors";
 import AnchorProfile from "../components/anchors/AnchorProfile";
 import { Image } from "react-native";
 import TopAnchors from "../components/anchors/TopAnchors";
-import { FlatList } from "react-native";
-import { topAnchors } from "../services/data";
 import ScreenHeader from "../utilitize/ScreenHeader";
 import Menus from "../components/anchors/Menus";
 import { View } from "react-native";
 import { Text } from "react-native";
+import { Pressable } from "react-native";
+import IconsSection from "../components/anchors/IconsSection";
 
 const ReceivedRanking = ({ navigation }) => {
   return (
     <View>
-      <ScreenHeader action={() => navigation.goBack()} title='Send Ranking' />
+      <ScreenHeader
+        action={() => navigation.goBack()}
+        title='Receive Ranking'
+      />
       <Menus />
 
       <View style={style.topHighlightWrapper}>
@@ -25,43 +28,106 @@ const ReceivedRanking = ({ navigation }) => {
         <Text style={style.topHighlightText}>1754.75 M</Text>
       </View>
 
-      <FlatList
-        data={topAnchors}
-        keyExtractor={(item) => item.id}
-        ListHeaderComponent={() => (
-          <View>
-            <TopAnchors
-              radio={false}
-              color={colors.orange}
-              dimond={require(`../public/icons/ruby-orange.png`)}
-            />
-            <View style={style.iconsWrapper}>
-              <Image source={require("../public/icons/send-request.png")} />
-              <Image source={require("../public/icons/ic_chat.png")} />
-              <Image source={require("../public/icons/double-user.png")} />
-              <Image source={require("../public/icons/ic_chat.png")} />
-              <Image source={require("../public/icons/user.png")} />
-              <Image source={require("../public/icons/ic_chat.png")} />
-            </View>
-          </View>
-        )}
-        renderItem={({ item, index }) => (
-          <View
-            style={{
-              ...style.profileContainer,
-              backgroundColor:
-                index % 2 === 0 ? colors.white : colors.secondaryGray,
-            }}
-          >
-            <AnchorProfile
-              dimond={require(`../public/icons/ruby-orange.png`)}
-              item={item}
-              icon
-              color={colors.orange}
-            />
-          </View>
-        )}
-      />
+      <View>
+        <TopAnchors
+          radio={false}
+          color={colors.orange}
+          dimond={require(`../public/icons/ruby-orange.png`)}
+        />
+        <IconsSection />
+      </View>
+
+      <Pressable
+        onPress={() => navigation.navigate("popularAnchors")}
+        style={style.profileContainer}
+      >
+        <AnchorProfile
+          profile={require("../public/resources/user-1.png")}
+          dimond={require(`../public/icons/ruby-orange.png`)}
+          name='Gina Rodriquez'
+          id={2}
+          user
+          color={colors.orange}
+        />
+      </Pressable>
+      <Pressable
+        onPress={() => navigation.navigate("popularAnchors")}
+        style={style.profileContainer}
+      >
+        <AnchorProfile
+          profile={require("../public/resources/user-2.png")}
+          dimond={require(`../public/icons/ruby-orange.png`)}
+          name='Gina Rodriquez'
+          id={3}
+          sendRequest
+          color={colors.orange}
+        />
+      </Pressable>
+      <Pressable
+        onPress={() => navigation.navigate("popularAnchors")}
+        style={style.profileContainer}
+      >
+        <AnchorProfile
+          profile={require("../public/resources/user-3.png")}
+          dimond={require(`../public/icons/ruby-orange.png`)}
+          name='Gina Rodriquez'
+          id={4}
+          group
+          color={colors.orange}
+        />
+      </Pressable>
+      <Pressable
+        onPress={() => navigation.navigate("popularAnchors")}
+        style={style.profileContainer}
+      >
+        <AnchorProfile
+          profile={require("../public/resources/user-4.png")}
+          dimond={require(`../public/icons/ruby-orange.png`)}
+          name='Gina Rodriquez'
+          id={5}
+          sendRequest
+          color={colors.orange}
+        />
+      </Pressable>
+      <Pressable
+        onPress={() => navigation.navigate("popularAnchors")}
+        style={style.profileContainer}
+      >
+        <AnchorProfile
+          profile={require("../public/resources/user-5.png")}
+          dimond={require(`../public/icons/ruby-orange.png`)}
+          name='Gina Rodriquez'
+          id={6}
+          sendRequest
+          color={colors.orange}
+        />
+      </Pressable>
+      <Pressable
+        onPress={() => navigation.navigate("popularAnchors")}
+        style={style.profileContainer}
+      >
+        <AnchorProfile
+          profile={require("../public/resources/user-6.png")}
+          dimond={require(`../public/icons/ruby-orange.png`)}
+          name='Gina Rodriquez'
+          id={7}
+          user
+          color={colors.orange}
+        />
+      </Pressable>
+      <Pressable
+        onPress={() => navigation.navigate("popularAnchors")}
+        style={style.profileContainer}
+      >
+        <AnchorProfile
+          profile={require("../public/resources/user-1.png")}
+          dimond={require(`../public/icons/ruby-orange.png`)}
+          name='Gina Rodriquez'
+          id={2}
+          group
+          color={colors.orange}
+        />
+      </Pressable>
     </View>
   );
 };
@@ -92,22 +158,5 @@ const style = StyleSheet.create({
     shadowOpacity: 0.27,
     shadowRadius: 6,
     elevation: 7,
-    marginHorizontal: 5,
-  },
-  iconsWrapper: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    backgroundColor: colors.white,
-    marginBottom: 10,
-    paddingHorizontal: 15,
-    paddingVertical: 5,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.27,
-    shadowRadius: 6,
-    elevation: 4,
   },
 });

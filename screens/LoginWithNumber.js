@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
 import { Image } from "react-native";
 import { Dimensions } from "react-native";
 import { View } from "react-native";
@@ -68,7 +69,7 @@ const LoginWithNumber = ({ navigation }) => {
           <InputFeild
             placeholder='Password'
             icon={require("../public/icons/arcticons_nc-passwords.png")}
-            secondIcon={require("../public/icons/eye.png")}
+            secondIcon
           />
 
           <Button
@@ -108,14 +109,12 @@ const LoginWithNumber = ({ navigation }) => {
           }}
         >
           {agreeTerms ? (
-            <Image
-              style={{ width: 15, height: 15 }}
-              source={require("../public/icons/radio.png")}
-            />
+            <AntDesign name='checkcircle' size={20} color={colors.primary} />
           ) : (
-            <Image
-              style={{ width: 15, height: 15 }}
-              source={require("../public/icons/plan-radio.png")}
+            <MaterialCommunityIcons
+              name='radiobox-blank'
+              size={20}
+              color={colors.secondary}
             />
           )}
           <Pressable onPress={() => setAgreeTerms((prev) => !prev)}>

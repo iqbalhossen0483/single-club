@@ -5,7 +5,7 @@ import { View } from "react-native";
 import { colors } from "../variants/colors";
 import { Pressable } from "react-native";
 
-const ScreenHeader = ({ title, action }) => {
+const ScreenHeader = ({ title, action, color }) => {
   return (
     <View
       style={{
@@ -13,7 +13,7 @@ const ScreenHeader = ({ title, action }) => {
         height: 50,
         alignItems: "center",
         paddingHorizontal: 15,
-        backgroundColor: colors.white,
+        backgroundColor: color ? color : colors.white,
       }}
     >
       <Pressable onPress={action}>

@@ -5,10 +5,9 @@ export const categoryStyle = StyleSheet.create({
   header: {
     fontSize: 20,
     fontWeight: 700,
-    textAlign: "center",
-    color: colors.primary,
     marginTop: 10,
     marginBottom: 8,
+    marginLeft: 15,
   },
   titleContainer: {
     borderWidth: 1,
@@ -16,6 +15,8 @@ export const categoryStyle = StyleSheet.create({
     borderRadius: 20,
     alignSelf: "center",
     flexDirection: "row",
+    width: 238,
+    height: 30,
   },
   inactiveTitle: {
     fontSize: 13,
@@ -23,6 +24,7 @@ export const categoryStyle = StyleSheet.create({
     color: colors.primary,
     paddingVertical: 5,
     paddingHorizontal: 20,
+    textAlign: "center",
   },
   activeTite: {
     backgroundColor: colors.primary,
@@ -32,6 +34,7 @@ export const categoryStyle = StyleSheet.create({
     paddingVertical: 5,
     borderRadius: 20,
     paddingHorizontal: 20,
+    textAlign: "center",
   },
   categoryItem: {
     paddingVertical: 4,

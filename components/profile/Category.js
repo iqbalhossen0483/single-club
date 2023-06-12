@@ -6,6 +6,8 @@ import { categoryStyle } from "../../css/category";
 import { Pressable } from "react-native";
 import { TextInput } from "react-native";
 import { Image } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { FlatList } from "react-native";
 
 const Category = ({ selectedCategory, setSelectedCategory }) => {
   const [showCategory, setShowCategory] = useState("person");
@@ -34,10 +36,16 @@ const Category = ({ selectedCategory, setSelectedCategory }) => {
     <View>
       <Text style={categoryStyle.header}>Category</Text>
       <View style={categoryStyle.titleContainer}>
-        <Pressable onPress={() => setShowCategory("person")}>
+        <Pressable
+          style={{ width: "50%" }}
+          onPress={() => setShowCategory("person")}
+        >
           <Text style={personStyle}>Person</Text>
         </Pressable>
-        <Pressable onPress={() => setShowCategory("company")}>
+        <Pressable
+          style={{ width: "50%" }}
+          onPress={() => setShowCategory("company")}
+        >
           <Text style={companyStyle}>Company</Text>
         </Pressable>
       </View>
@@ -50,28 +58,30 @@ const Category = ({ selectedCategory, setSelectedCategory }) => {
         <TextInput style={categoryStyle.searchInput} placeholder='Search' />
       </View>
 
-      <ScrollView style={{ marginTop: 8 }}>
-        {data.map((ct, i) => (
+      <FlatList
+        contentContainerStyle={{ paddingBottom: 160 }}
+        data={data}
+        renderItem={({ item, index }) => (
           <Pressable
             onPress={() => addCategory(ct)}
             style={{
               ...categoryStyle.categoryItem,
               backgroundColor:
-                i % 2 === 0 ? colors.white : colors.secondaryGray,
+                index % 2 === 0 ? colors.white : colors.secondaryGray,
               justifyContent: "space-between",
             }}
-            key={i}
           >
-            <Text style={categoryStyle.categoryValue}>{ct}</Text>
-            {selectedCategory.find((item) => item === ct) && (
-              <Image
-                style={{ width: 16, height: 16 }}
-                source={require("../../public/icons/radio.png")}
+            <Text style={categoryStyle.categoryValue}>{item}</Text>
+            {selectedCategory.find((ct) => ct === item) && (
+              <Ionicons
+                name='checkmark-circle'
+                size={18}
+                color={colors.primary}
               />
             )}
           </Pressable>
-        ))}
-      </ScrollView>
+        )}
+      />
     </View>
   );
 };

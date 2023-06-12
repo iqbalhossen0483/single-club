@@ -7,4 +7,5 @@ export const colors = {
   placeholder: "",
   orange: "#FF80AD",
   white: "#FFFFFF",
+  blue: "#54A8FF",
 };

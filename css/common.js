@@ -32,7 +32,7 @@ export const common = StyleSheet.create({
     right: -20,
     top: -22,
     backgroundColor: "#fff",
-    width: "60%",
+    width: 262,
     shadowColor: "#000000",
     shadowOffset: {
       width: 0,
